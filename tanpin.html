@@ -41,7 +41,7 @@ li {
   font-size: 0.9rem;
   padding: 0 4%;
 }
-  #header {
+#header {
   max-width: 75%;
   display: flex;
   flex-wrap: wrap;
@@ -51,14 +51,22 @@ li {
   margin: 0 auto;
   padding: 0 4%;
 }
-  #header ul{
-    display: flex;
-    padding: 10px 0;
-  }
-  #header li{
-    font-size: 0.9rem;
-    margin-left: 30px;
-  }
+
+#header ul {
+  display: flex;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+#header li {
+  font-size: 0.9rem;
+  margin-left: 30px;
+  white-space: nowrap;
+}
+
+#header li:first-child {
+  margin-left: 0;
+}
 @media screen and (max-width: 600px) {
    .wrapper {
     margin-bottom: 70px;
@@ -158,4 +166,5 @@ li {
  </footer>
 </body>
 </html>
+
 
