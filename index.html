@@ -9,187 +9,242 @@
   <meta name="google-site-verification" content="XF9FaU4ZeaMwBR2oH4paj9FDLnAxYBVAI8cKAbiwnjc" />
 </head>
 <style>
-  html {
+/* --- ベーススタイル --- */
+html {
   font-size: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body {
   color: #24292e;
-  max-width: 100%;
-  margin: 0px;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.8; /* 行間を広げて読みやすく */
 }
 a {
   text-decoration: none;
-  color: black;
+  color: #24292e;
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.7; /* マウスを乗せた時に少し薄くする */
 }
 img {
   max-width: 100%;
+  vertical-align: bottom;
 }
 li {
   list-style: none;
 }
-.site-title a {
-  display: block;
-}
-.sec-title {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 65px;
+ul {
+  padding: 0;
+  margin: 0;
 }
 
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto 130px auto;
-  font-size: 0.9rem;
-  padding: 0 4%;
-}
+/* --- ヘッダー --- */
 #header {
-  max-width: 75%;
+  max-width: 1200px; /* PCでの最大幅を広げる */
+  width: 92%;
+  margin: 0 auto;
+  padding: 20px 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: 270px;
-  margin: 0 auto;
-  padding: 0 4%;
 }
-
-#header ul {
+/* ロゴ */
+#header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+/* ナビゲーション */
+#header nav ul {
   display: flex;
-  padding: 10px 0;
-  flex-wrap: wrap;
+  gap: 30px; /* メニュー間の余白 */
+}
+#header nav li {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-#header li {
-  font-size: 0.9rem;
-  margin-left: 30px;
-  white-space: nowrap;
-}
-
-#header li:first-child {
-  margin-left: 0;
-}
-  #about ul {
-  margin-bottom: 30px;
-  padding: 0px;
-}
-#about li:first-child {
-  margin-bottom: 30px;
-}
-#about p {
-  text-align:justify;
-}
-#footer {
-  background-color: #24292e;
-  color: #fff;
-  font-size: 0.5rem;
-  padding: 10px 20px;
-  text-align: center;
-}
-@media screen and (max-width: 600px) {
-   .wrapper {
-    margin-bottom: 70px;
-  }
-  .site-title {
-    margin-top: 20px;
-  }
-  .sec-title {
-    margin-bottom: 40px;
-  }
-     #header {
-    max-width: 100%;
-    height: auto;
-    flex-direction: column;
-  }
-  nav{
-    width: 100%;
-  }
-  #header ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-  }
-  #header li {
-    font-size: 0.8rem;
-    margin: 10px;
-  }
-  #header li:first-child {
-    margin-left: 0;
-  }
-  #mainvisual {
+/* --- メインビジュアル --- */
+#mainvisual {
+  width: 100%;
+  height: 60vh; /* 画面の高さの60%を使用 */
   margin-bottom: 80px;
+  overflow: hidden;
 }
 #mainvisual img {
   width: 100%;
-  max-width: 1920px;
-  height: 420px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* 画像をトリミングして枠いっぱいに表示 */
+  object-position: center;
 }
+
+/* --- コンテンツ共通 --- */
+.wrapper {
+  max-width: 1000px; /* 読みやすい幅に制限 */
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+}
+.sec-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* --- Aboutセクション（PCレイアウト） --- */
+.about-container {
+  display: flex; /* 横並びにする */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px; /* 地図とテキストの間隔 */
+}
+
+/* 左側：地図エリア */
+.about-map {
+  flex: 1; /* 幅を均等に分け合う */
+  width: 100%;
+}
+.about-map iframe {
+  width: 100%; /* 親要素に合わせて伸縮 */
+  height: 350px; /* 高さを指定 */
+  border-radius: 8px; /* 角を少し丸める */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 右側：情報エリア */
+.about-info {
+  flex: 1;
+}
+.about-info ul {
+  margin-bottom: 30px;
+}
+.about-info li {
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #eee; /* 区切り線 */
+  padding-bottom: 5px;
+}
+.about-info p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.update-date {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+  margin-top: 30px;
+}
+
+/* --- フッター --- */
+#footer {
+  background-color: #24292e;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 20px;
+  text-align: center;
+}
+
+/* --- スマホ用レスポンシブ（600px以下） --- */
+@media screen and (max-width: 600px) {
+  #header {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  #header h1 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  #header nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #header nav li {
+    font-size: 0.85rem;
+  }
+  
+  #mainvisual {
+    height: 300px; /* スマホでは高さを抑える */
+    margin-bottom: 50px;
+  }
+  
+  .about-container {
+    flex-direction: column; /* 縦並びに戻す */
+    gap: 30px;
+  }
+  .about-map iframe {
+    height: 250px;
+  }
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
 }
 </style>
 <body>
-<header id=header>
+<header id="header">
   <h1>
     <a href="index.html">かめたに　ときわ台店</a>
   </h1>
   <nav>
     <ul>
-      <li>
-        <a href="index.html">ホーム</a>
-      </li>
-      <li>
-        <a href="kaiseki.html">会席</a>
-      </li>
-      <li>
-        <a href="obento.html">お弁当</a>
-      </li>
-      <li>
-        <a href="tanpin.html">単品</a>
-      </li>
-      <li>
-        <a href="odoburu.html">オードブル</a>
-      </li>
-      <li>
-        <a href="yoyaku.html">予約</a>
-      </li>
-      <li>
-         <a href="eigyou.html">営業日</a>
-      </li>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="kaiseki.html">会席</a></li>
+      <li><a href="obento.html">お弁当</a></li>
+      <li><a href="tanpin.html">単品</a></li>
+      <li><a href="odoburu.html">オードブル</a></li>
+      <li><a href="yoyaku.html">予約</a></li>
+      <li><a href="eigyou.html">営業日</a></li>
     </ul>
   </nav>
 </header>
+
 <main>
-      <div id="meinvisual">
-        <picture>
-          <source media="(max-width: 600px)" srcset="かめたにしゃしん.JPG">
-          <img src="かめたにしゃしん.JPG" alt="かめたにの写真">
-        </picture>
+  <!-- IDのスペルミスを修正 meinvisual -> mainvisual -->
+  <div id="mainvisual">
+    <picture>
+      <!-- スマホ用とPC用で同じ画像を使う場合でもpictureタグは有効ですが、
+           シンプルにimgタグだけでもCSSのobject-fitで綺麗に見せられます -->
+      <img src="かめたにしゃしん.JPG" alt="かめたにの写真">
+    </picture>
+  </div>
+
+  <section id="about" class="wrapper">
+    <h2 class="sec-title">About</h2>
+    
+    <!-- 地図とテキストを左右に分けるための箱を用意 -->
+    <div class="about-container">
+      
+      <!-- 左：地図 -->
+      <div class="about-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1945.6357257705909!2d135.44190240053916!3d34.90252906871585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f7fcf3ed2dd7%3A0xa2b36779676a8650!2z44GL44KB44Gf44GrIOOBqOOBjeOCj-WPsOW6lw!5e0!3m2!1sja!2sjp!4v1717571684529!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <section id="about" class="wrapper">
-        <h2 class="sec-title">About</h2>
+
+      <!-- 右：店舗情報 -->
+      <div class="about-info">
         <ul>
-          <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1945.6357257705909!2d135.44190240053916!3d34.90252906871585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f7fcf3ed2dd7%3A0xa2b36779676a8650!2z44GL44KB44Gf44GrIOOBqOOBjeOCj-WPsOW6lw!5e0!3m2!1sja!2sjp!4v1717571684529!5m2!1sja!2sjp" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
-          <li>大阪府豊能郡豊能町ときわ台5丁目8-11</li>
-          <li>電話番号：072-738-0660(朝9時～電話に出ることができます)</li>
-          <li>営業日: 月火定休（祝日は営業）</li>
+          <li>住所：大阪府豊能郡豊能町ときわ台5丁目8-11</li>
+          <li>電話：072-738-0660 <br><small>(朝9時～電話に出ることができます)</small></li>
+          <li>定休日：月・火（祝日は営業）</li>
           <li>営業時間：11:00～21:00</li>
         </ul>
         <p>
           四季折々の食材をふんだんに取り入れた季節限定メニューをお楽しみいただけます。季節ごとの味覚を存分に堪能してください。
         </p>
-        <p>
+        <p class="update-date">
           サイト更新日：2026年1月4日
         </p>
-      </section>
-      </main>
+      </div>
+    </div>
+  </section>
+</main>
 
-      <footer id="footer">
-       <p>&copy; 2024 Tokiwadai Kametani</p> 
-      </footer>
+<footer id="footer">
+  <p>&copy; 2024 Tokiwadai Kametani</p> 
+</footer>
 </body>
 </html>
-
-
-
-
-
-
