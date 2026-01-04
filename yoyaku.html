@@ -4,157 +4,155 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="canonical" href="https://website-sage-phi.vercel.app/yoyaku.html" />
+  <link rel="canonical" href="https://website-sage-phi.vercel.app/kaiseki.html" />
   <title>【公式ホームページ】豊能町　かめたに　ときわ台店</title>
 </head>
 <style>
-   html {
+/* --- ベーススタイル --- */
+html {
   font-size: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body {
   color: #24292e;
-  max-width: 100%;
-  margin: 0px;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.6;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: #24292e;
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.7;
 }
 img {
   max-width: 100%;
+  vertical-align: bottom;
 }
 li {
   list-style: none;
 }
-.site-title a {
-  display: block;
-}
-.sec-title {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 65px;
+ul {
+  padding: 0;
+  margin: 0;
 }
 
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto 130px auto;
-  font-size: 0.9rem;
-  padding: 0 4%;
-}
-  #header {
-  max-width: 75%;
+/* --- ヘッダー --- */
+#header {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 20px 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: 270px;
-  margin: 0 auto;
-  padding: 0 4%;
 }
-  #header ul{
-    display: flex;
-    padding: 10px 0;
-  }
-  #header li{
-    font-size: 0.9rem;
-    margin-left: 30px;
-  }
-@media screen and (max-width: 600px) {
-   .wrapper {
-    margin-bottom: 70px;
-  }
-  .site-title {
-    margin-top: 20px;
-  }
-  .sec-title {
-    margin-bottom: 40px;
-  }
-     #header {
-    max-width: 100%;
-    height: auto;
-    flex-direction: column;
-  }
-  nav{
-    width: 100%;
-  }
-  #header ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-  }
-  #header li {
-    font-size: 0.8rem;
-    margin: 10px;
-  }
-  #header li:first-child {
-    margin-left: 0;
-  }
-  #mainvisual {
-  margin-bottom: 80px;
+/* ロゴ */
+#header h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
-#mainvisual img {
+/* ナビゲーション */
+#header nav ul {
+  display: flex;
+  gap: 30px;
+}
+#header nav li {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* --- メインコンテンツ（画像エリア） --- */
+main {
   width: 100%;
-  max-width: 1920px;
-  height: 420px;
-  object-fit: cover;
+  padding-bottom: 50px;
 }
-}
-#jpeg{
+
+.image-container {
   width: 100%;
-  max-width: 1920px;
-  height: 420px;
-  object-fit: cover;
+  max-width: 1200px; /* PCで画像が大きくなりすぎないよう最大幅を設定（お好みで調整可） */
+  margin: 0 auto;    /* 中央寄せ */
+  padding: 0 4%;     /* 画面端との余白 */
+  box-sizing: border-box;
 }
+
+.image-container img {
+  width: 100%;      /* 横幅いっぱいに広げる */
+  height: auto;     /* ★重要：高さを自動調整にして比率を崩さない（切り取り禁止） */
+  display: block;   /* 画像下の隙間を消す */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 少し影をつけて見やすく */
+}
+
+/* --- フッター --- */
 #footer {
   background-color: #24292e;
   color: #fff;
-  font-size: 0.5rem;
-  padding: 10px 20px;
+  font-size: 0.8rem;
+  padding: 20px;
   text-align: center;
+}
+
+/* --- スマホ用レスポンシブ（600px以下） --- */
+@media screen and (max-width: 600px) {
+  #header {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  #header h1 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  #header nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #header nav li {
+    font-size: 0.85rem;
+  }
+  
+  /* スマホでも画像は横幅いっぱいに表示 */
+  .image-container {
+    padding: 0; /* スマホでは画面端まで画像を広げる */
+  }
 }
 </style>
 <body>
-<header id=header>
+<header id="header">
   <h1>
     <a href="index.html">かめたに　ときわ台店</a>
   </h1>
   <nav>
     <ul>
-      <li>
-        <a href="index.html">ホーム</a>
-      </li>
-      <li>
-        <a href="kaiseki.html">会席</a>
-      </li>
-      <li>
-        <a href="obento.html">お弁当</a>
-      </li>
-      <li>
-        <a href="tanpin.html">単品</a>
-      </li>
-      <li>
-        <a href="odoburu.html">オードブル</a>
-      </li>
-      <li>
-        <a href="yoyaku.html">予約</a>
-      </li>
-      <li>
-         <a href="eigyou.html">営業日</a>
-      </li>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="kaiseki.html">会席</a></li>
+      <li><a href="obento.html">お弁当</a></li>
+      <li><a href="tanpin.html">単品</a></li>
+      <li><a href="odoburu.html">オードブル</a></li>
+      <li><a href="yoyaku.html">予約</a></li>
+      <li><a href="eigyou.html">営業日</a></li>
     </ul>
   </nav>
 </header>
-      <div id="jpeg">
-        <picture>
-          <source media="(max-width: 600px)" srcset="予約.jpg">
-          <img src="予約.jpg" alt="予約などの写真">
-        </picture>
-</div>
- <footer id="footer">
-       <p>&copy; 2024 Tokiwadai Kametani</p> 
- </footer>
+
+<main>
+  <!-- 画像を表示するエリア -->
+  <div class="image-container">
+    <picture>
+      <!-- sourceタグはsrcsetが同じであれば省略可能です。シンプルにimgタグだけで機能します -->
+      <img src="予約.jpg" alt="予約のメニュー写真">
+    </picture>
+  </div>
+</main>
+
+<footer id="footer">
+  <p>&copy; 2024 Tokiwadai Kametani</p> 
+</footer>
+
 </body>
 </html>
-
-
-
